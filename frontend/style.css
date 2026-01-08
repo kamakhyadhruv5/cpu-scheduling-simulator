@@ -1,0 +1,160 @@
+body {
+  background: #121212;              /* deep charcoal */
+  color: #e5e5e5;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(90deg, #3a2a1f, #1c140f);
+  color: #fafafa;
+}
+
+.algorithms {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px;
+}
+
+.algo {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #2a1f1a;
+  color: #d6d3d1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.algo:hover {
+  background: #3a2a1f;
+}
+
+.algo.active {
+  background: #f5c26b;              /* muted gold */
+  color: #1a120c;
+}
+
+.input-card {
+  width: 80%;
+  margin: auto;
+  background: #1a120c;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #3a2a1f;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: #2a1f1a;
+  color: #f5f5f4;
+}
+
+th, td {
+  border: 1px solid #3a2a1f;
+  padding: 8px;
+  text-align: center;
+}
+
+td {
+  color: #e7e5e4;
+}
+
+input {
+  width: 80%;
+  padding: 6px;
+  background: #fdf1d3;              /* soft parchment */
+  color: #1a120c;
+  border: 1px solid #3a2a1f;
+  border-radius: 6px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #f5c26b;
+}
+
+.input-card button {
+  margin-top: 15px;
+}
+
+.run {
+  margin-top: 25px;
+  background: #7a9f5a;              /* soft olive green */
+  color: #10200f;
+  border: none;
+  padding: 10px 22px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.run:hover {
+  background: #688b4a;
+}
+
+#quantumBox {
+  width: 30%;
+  margin: 15px 0;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+#quantumBox.show {
+  opacity: 1;
+  max-height: 60px;
+}
+
+#gantt {
+  width: 80%;
+  margin: 30px auto;
+}
+
+#ganttTimeline {
+  display: flex;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #d6d3d1;
+}
+
+#ganttChart {
+  display: flex;
+  height: 50px;
+}
+
+.gantt-block {
+  background: linear-gradient(135deg, #d97706, #b45309); /* amber/brown */
+  color: #1a120c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border-right: 2px solid #1a120c;
+}
+
+#metrics {
+  width: 80%;
+  margin: 20px auto;
+  font-size: 18px;
+  color: #fafafa;
+}
+
+#resultTable {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.priority-col {
+  display: none;
+}
