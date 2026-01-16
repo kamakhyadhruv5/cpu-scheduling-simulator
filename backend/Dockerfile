@@ -1,17 +1,24 @@
-# Use Java 17
-FROM eclipse-temurin:17-jdk-alpine
-
-# Set working directory
+# ---------- BUILD STAGE ----------
+FROM maven:3.9.6-eclipse-temurin-17 AS build
 WORKDIR /app
 
-# Copy everything
-COPY . .
+COPY backend/pom.xml .
+COPY backend/.mvn .mvn
+COPY backend/mvnw .
 
-# Build the application
+# ✅ FIX: give execute permission
+RUN chmod +x mvnw
+
+RUN ./mvnw dependency:go-offline
+
+COPY backend/src src
 RUN ./mvnw clean package -DskipTests
 
-# Expose port
-EXPOSE 8080
+# ---------- RUN STAGE ----------
+FROM eclipse-temurin:17-jre
+WORKDIR /app
 
-# Run the jar
-CMD ["sh", "-c", "java -jar target/*.jar"]
+COPY --from=build /app/target/*.jar app.jar
+
+EXPOSE 8080
+ENTRYPOINT ["java","-jar","app.jar"]
