@@ -93,7 +93,7 @@ function runSimulation() {
     processes
   };
 
-  fetch("http://localhost:8080/api/schedule", {
+  fetch("https://cpu-scheduling-simulator-m8kk.onrender.com/api/schedule", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload)
